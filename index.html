@@ -1,9 +1,50 @@
+
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Listado de solucuones al ejercicio</title>
   </head>
+  
   <body></body>
-</html>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const array1 = [
+        [1, 3, 5],
+        [7, 9, 7],
+        [5, 3, 1],
+      ];
+  
+      const array2 = [
+        [2, 4, 6],
+        [8, 10, 8],
+        [6, 4, 2],
+      ];
+  
+      let result = [];
+  
+      for (var row = 0; row < 3; row++) {
+  
+        let rowTemp = [];
+  
+        for (var column = 0; column < 3; column++) {
+          rowTemp.push(array1[row][column] * array2[column][row])
+        }
+  
+        result.push(rowTemp);
+      }
+  
+      let resultString = result.map(row => {
+        return row.map(value => {
+          return value.toString().padStart(3, '0');
+        });
+      });
+  
+      console.log(resultString);
+    });
+  </script>
+  
+  </html>
